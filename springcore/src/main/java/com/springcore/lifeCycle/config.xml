@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+      
+       <context:annotation-config/> <!-- for enabling annotations, by default they're turned off  -->
+        
+       <bean class="com.springcore.lifeCycle.Init_Destroy_using_XML" id="samosa1" 
+       				p:price="12" init-method="hiBaby" destroy-method="byeBaby"/>
+       	
+       
+       <bean class="com.springcore.lifeCycle.Init_Destroy_using_Interface" id ="pepsi1" 
+       				p:price="2"/>
+       	
+       <bean class="com.springcore.lifeCycle.Init_Destroy_using_Annotations" id="chat1" 
+       				p:subject="aluTikki"/>
+       
+       
+               
+</beans>

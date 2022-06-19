@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p" 
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+        
+        <!-- This is our bean Student 1-->         
+        <bean class="com.springcore.base.Student" id="student1">
+        	<!-- Setter injection(using property XML element or property tag) is used for injecting data in object -->
+        	<property name="studentId"> 
+        	<!-- Value as element is used -->
+        	<value>1813310185</value> 
+        	</property>        	
+        	<!-- value is used as a attribute here, aNOTHER WAY OF DOING THE SAME THING -->      	
+        	<property name="studentName" value="Shashwat Chaturvedi"/> 
+        	<property name="studentAddress" value="Shashwat"/>
+		</bean>
+		
+		<!-- This is our bean Student 2, Here p schema is used for assigning values -->
+		<!-- Declaration of p schema in beans definition is required first -->
+		<!-- definition = "xmlns:p="http://www.springframework.org/schema/p"  -->
+		<bean class="com.springcore.base.Student" id= "student2" 
+			p:studentId="1813310186" 
+			p:studentName="ShashwatPal" 
+			p:studentAddress="Mirzapur"/>            
+               
+</beans>
